@@ -99,6 +99,10 @@
   }
 }
 
+.container {
+  max-width: 1400px;
+}
+
 /* ── Custom utilities ───────────────────────────────────── */
 @utility scrollbar-hide {
   -ms-overflow-style: none;

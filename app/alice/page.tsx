@@ -173,7 +173,10 @@ export default function AliceApartment() {
 
         {/* Photo Gallery */}
         <RevealSection>
-          <h2 className="font-serif text-3xl font-bold mb-8">Photo Gallery</h2>
+          <div className="text-center mb-8">
+            <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: C.terracotta }}>Browse the Space</p>
+            <h2 className="font-serif text-3xl font-bold">Photo Gallery</h2>
+          </div>
           <Gallery images={galleryImages} />
         </RevealSection>
 

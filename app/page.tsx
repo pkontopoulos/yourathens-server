@@ -55,9 +55,9 @@ export default function HomePage() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <RevealSection className="text-center max-w-3xl mx-auto">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-5">
+            <h1 className="font-serif text-3xl md:text-4xl font-bold mb-5">
               Stay where Athens actually lives
-            </h2>
+            </h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-10">
               Exarcheia is the city at its most unfiltered — street art, independent bookshops,
               legendary tavernas, and a creative energy that no guidebook can capture.

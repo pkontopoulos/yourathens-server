@@ -13,11 +13,11 @@ const C = {
 
 const heroImages = [
   {
-    src: "/images/athens-plaka.jpg",
-    alt: "Athens Plaka cityscape",
-    title: "Welcome to YourAthens",
-    subtitle: "Experience the heart of Athens in our elegant apartments",
-    cta: { label: "Read our Blog", href: "/blog" },
+    src: "/images/alice-main.jpg",
+    alt: "Spacious apartment living room",
+    title: "Alice Apartment",
+    subtitle: "Spacious 2-bedroom for up to 4 guests",
+    cta: { label: "Visit Alice", href: "/alice" },
   },
   {
     src: "/images/jack-main.jpg",
@@ -27,11 +27,11 @@ const heroImages = [
     cta: { label: "Visit Jack", href: "/jack" },
   },
   {
-    src: "/images/alice-main.jpg",
-    alt: "Spacious apartment living room",
-    title: "Alice Apartment",
-    subtitle: "Spacious 2-bedroom for up to 4 guests",
-    cta: { label: "Visit Alice", href: "/alice" },
+    src: "/images/athens-plaka.jpg",
+    alt: "Athens Plaka cityscape",
+    title: "Welcome to YourAthens",
+    subtitle: "Experience the heart of Athens in our elegant apartments",
+    cta: { label: "Read our Blog", href: "/blog" },
   },
   {
     src: "/images/exarcheia-main.jpg",
@@ -82,12 +82,12 @@ export function HeroCarousel() {
           />
 
           <div className="absolute inset-0 flex flex-col items-center justify-end pb-32 px-4 text-center">
-            <h1
+            <p
               className="font-serif text-4xl md:text-6xl font-bold mb-3 leading-tight animate-fade-in"
               style={{ color: C.cream }}
             >
               {image.title}
-            </h1>
+            </p>
             <p
               className="text-lg md:text-xl font-light max-w-2xl mx-auto mb-8 animate-fade-in"
               style={{ color: `${C.cream}CC` }}
