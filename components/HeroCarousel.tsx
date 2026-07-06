@@ -30,7 +30,7 @@ const heroImages = [
     src: "/images/athens-plaka.jpg",
     alt: "Athens Plaka cityscape",
     title: "Welcome to YourAthens",
-    subtitle: "Experience the heart of Athens in our elegant apartments",
+    subtitle: "Experience the heart of Athens from our elegant apartments",
     cta: { label: "Read our Blog", href: "/blog" },
   },
   {
@@ -57,7 +57,7 @@ export function HeroCarousel() {
   }, []);
 
   return (
-    <section className="relative h-[75vh] overflow-hidden">
+    <section className="relative min-h-[100dvh] overflow-hidden">
       {heroImages.map((image, index) => (
         <div
           key={index}
@@ -77,26 +77,26 @@ export function HeroCarousel() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(to bottom, rgba(27,13,5,0.5) 0%, rgba(27,13,5,0.08) 45%, rgba(27,13,5,0.72) 100%)",
+                "linear-gradient(135deg, rgba(27,13,5,0.82) 0%, rgba(27,13,5,0.48) 45%, rgba(27,13,5,0.15) 80%, transparent 100%), linear-gradient(to top, rgba(27,13,5,0.55) 0%, transparent 40%)",
             }}
           />
 
-          <div className="absolute inset-0 flex flex-col items-center justify-end pb-32 px-4 text-center">
+          <div className="absolute inset-0 flex flex-col justify-end pb-28 px-6 md:px-14 lg:px-20 max-w-3xl">
             <p
-              className="font-serif text-4xl md:text-6xl font-bold mb-3 leading-tight animate-fade-in"
+              className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight"
               style={{ color: C.cream }}
             >
               {image.title}
             </p>
             <p
-              className="text-lg md:text-xl font-light max-w-2xl mx-auto mb-8 animate-fade-in"
+              className="text-lg md:text-xl font-light mb-9 max-w-md"
               style={{ color: `${C.cream}CC` }}
             >
               {image.subtitle}
             </p>
             <Link
               href={image.cta.href}
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-semibold transition-opacity duration-200 hover:opacity-85 animate-fade-in"
+              className="inline-flex items-center gap-2 self-start px-6 py-3 rounded-lg text-sm font-semibold transition-opacity duration-200 hover:opacity-85"
               style={{
                 background: `linear-gradient(130deg, ${C.terracotta} 0%, ${C.gold} 100%)`,
                 color: C.cream,
@@ -124,22 +124,19 @@ export function HeroCarousel() {
         <ChevronRight className="w-6 h-6 text-white" />
       </button>
 
-      <div className="absolute bottom-16 left-1/2 -translate-x-1/2 flex gap-3 z-10">
+      <div className="absolute bottom-12 left-6 md:left-14 lg:left-20 flex gap-2.5 z-10">
         {heroImages.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className="w-3 h-3 rounded-full transition-all duration-300"
+            className="rounded-full transition-all duration-300"
             style={{
+              width: index === currentIndex ? "24px" : "10px",
+              height: "10px",
               background:
                 index === currentIndex
                   ? C.terracotta
-                  : "rgba(255,255,255,0.55)",
-              transform: index === currentIndex ? "scale(1.3)" : "scale(1)",
-              boxShadow:
-                index === currentIndex
-                  ? `0 0 0 2px rgba(184,90,53,0.35)`
-                  : "none",
+                  : "rgba(255,255,255,0.45)",
             }}
             aria-label={`Go to slide ${index + 1}`}
           />

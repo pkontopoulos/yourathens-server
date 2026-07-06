@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { MapPin, Phone, Mail, MessageSquare } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 import { RevealSection } from "@/components/RevealSection";
 import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us – YourAthens",
+  title: "Contact Us - YourAthens",
   description:
     "Get in touch with YourAthens to book your stay or ask any questions about our apartments in Exarcheia, Athens.",
 };
@@ -19,108 +19,135 @@ const C = {
 export default function Contact() {
   return (
     <div>
-      <style>{`
-        @keyframes contact-fadeup { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-        .contact-hero-eyebrow { animation: contact-fadeup 0.6s ease 0.05s both; }
-        .contact-hero-title   { animation: contact-fadeup 0.7s ease 0.18s both; }
-        .contact-hero-sub     { animation: contact-fadeup 0.7s ease 0.32s both; }
-      `}</style>
-
-      {/* Hero */}
-      <div className="relative overflow-hidden pt-14" style={{ background: `linear-gradient(145deg, ${C.dark} 0%, #3A1A08 50%, ${C.terracotta} 100%)`, paddingBottom: "5.5rem" }}>
-        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px)`, backgroundSize: "22px 22px" }} />
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="contact-hero-eyebrow inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full text-xs uppercase tracking-widest font-semibold" style={{ background: "rgba(251,246,238,0.12)", border: "1px solid rgba(251,246,238,0.22)", color: C.cream }}>
-            <MessageSquare className="w-3.5 h-3.5" />
-            We&apos;d love to hear from you
-          </div>
-          <h1 className="contact-hero-title font-serif text-5xl md:text-6xl font-bold mb-5 leading-tight" style={{ color: C.cream }}>Contact Us</h1>
-          <p className="contact-hero-sub text-base md:text-lg max-w-xl mx-auto leading-relaxed" style={{ color: `${C.cream}CC` }}>
-            Ready to experience Athens? Get in touch to book your stay or ask any questions.
+      {/* Header */}
+      <div className="py-20" style={{ background: C.cream }}>
+        <div className="container mx-auto px-4">
+          <h1
+            className="animate-hero-fadeup font-serif text-5xl md:text-6xl font-bold mb-5 leading-tight"
+            style={{ animationDelay: "0.05s" }}
+          >
+            Contact Us
+          </h1>
+          <p
+            className="animate-hero-fadeup text-lg text-muted-foreground leading-relaxed max-w-lg"
+            style={{ animationDelay: "0.2s" }}
+          >
+            Ready to experience Athens? Get in touch to book your stay or ask
+            any questions about our apartments.
           </p>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 64" preserveAspectRatio="none" style={{ display: "block", height: "64px", width: "100%" }}>
-            <path d="M0,64 C280,10 560,54 720,32 C880,10 1160,56 1440,28 L1440,64 Z" fill="white" />
-          </svg>
         </div>
       </div>
 
-      {/* Main grid */}
-      <div className="container mx-auto px-4 py-14">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      {/* Main content */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-          {/* Left: contact info */}
-          <RevealSection>
-            <h2 className="font-serif text-2xl font-bold mb-8">Get in Touch</h2>
-            <div className="space-y-4">
-              {[
-                { Icon: MapPin, label: "Address", content: <p className="text-sm text-muted-foreground leading-relaxed">31 Themistokleous Str<br />Exarcheia, Athens, Greece</p> },
-                { Icon: Phone, label: "Phone", content: <a href="tel:+306973800584" className="text-sm hover:underline transition-colors" style={{ color: C.terracotta }}>+30 6973800584</a> },
-                { Icon: Mail, label: "Email", content: <a href="mailto:info@yourathens.gr" className="text-sm hover:underline transition-colors" style={{ color: C.terracotta }}>info@yourathens.gr</a> },
-              ].map(({ Icon, label, content }) => (
-                <div key={label} className="flex items-start gap-4 p-4 bg-white rounded-xl border border-stone-100 shadow-sm">
-                  <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style={{ background: `${C.terracotta}18` }}>
-                    <Icon className="w-5 h-5" style={{ color: C.terracotta }} />
+            {/* Left: contact details + map + social */}
+            <RevealSection className="space-y-10">
+              <div>
+                <h2 className="font-serif text-2xl font-bold mb-7">
+                  Get in Touch
+                </h2>
+                <div className="space-y-5">
+                  <div className="flex items-start gap-4">
+                    <MapPin
+                      className="w-5 h-5 mt-0.5 shrink-0"
+                      style={{ color: C.terracotta }}
+                    />
+                    <div>
+                      <p className="text-sm font-semibold mb-0.5">Address</p>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        31 Themistokleous Str
+                        <br />
+                        Exarcheia, Athens, Greece
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-1">{label}</p>
-                    {content}
+                  <div className="flex items-center gap-4">
+                    <Phone
+                      className="w-5 h-5 shrink-0"
+                      style={{ color: C.terracotta }}
+                    />
+                    <a
+                      href="tel:+306973800584"
+                      className="text-sm font-medium transition-colors hover:underline"
+                      style={{ color: C.dark }}
+                    >
+                      +30 6973800584
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <Mail
+                      className="w-5 h-5 shrink-0"
+                      style={{ color: C.terracotta }}
+                    />
+                    <a
+                      href="mailto:info@yourathens.gr"
+                      className="text-sm font-medium transition-colors hover:underline"
+                      style={{ color: C.dark }}
+                    >
+                      info@yourathens.gr
+                    </a>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
 
-            {/* Social links */}
-            <div className="mt-8">
-              <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-4">Follow Us</p>
+              {/* Map */}
+              <div className="relative w-full h-64 rounded-2xl shadow-md overflow-hidden border border-stone-100">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3144.5147688582584!2d23.7324895!3d37.9849061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bd312756b08b%3A0x891f1ac3318d7dd!2sThemistokleous%2031%2C%20Athina%20106%2077%2C%20Greece!5e0!3m2!1sen!2sus!4v1698000000000!5m2!1sen!2sus"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="YourAthens Location"
+                  className="absolute inset-0 w-full h-full"
+                />
+                <div
+                  className="absolute top-3 left-3 flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold shadow-md bg-white"
+                  style={{ color: C.dark }}
+                >
+                  <MapPin
+                    className="w-3 h-3 shrink-0"
+                    style={{ color: C.terracotta }}
+                  />
+                  YourAthens Apartments
+                </div>
+              </div>
+
+              {/* Social */}
               <div className="flex gap-3">
                 {[
                   { href: "https://www.facebook.com/yourathens", label: "Facebook" },
                   { href: "http://instagram.com/your_athens_apartments", label: "Instagram" },
                 ].map(({ href, label }) => (
-                  <a key={label} href={href} target="_blank" rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold border transition-all duration-200 hover:opacity-85"
-                    style={{ borderColor: C.terracotta, color: C.terracotta }}>
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2.5 rounded-lg text-sm font-semibold border transition-all duration-200 hover:bg-[#B85A35] hover:text-white hover:border-[#B85A35]"
+                    style={{ borderColor: C.terracotta, color: C.terracotta }}
+                  >
                     {label}
                   </a>
                 ))}
               </div>
-            </div>
-          </RevealSection>
+            </RevealSection>
 
-          {/* Right: form (client component) */}
-          <RevealSection delay={120}>
-            <h2 className="font-serif text-2xl font-bold mb-8">Send us a Message</h2>
-            <ContactForm />
-          </RevealSection>
-        </div>
-
-        {/* Why Choose section */}
-        <RevealSection className="mt-16">
-          <div className="rounded-2xl relative overflow-hidden py-12 px-8" style={{ background: `linear-gradient(145deg, ${C.dark} 0%, #3A1A08 60%, ${C.terracotta} 100%)` }}>
-            <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)`, backgroundSize: "20px 20px" }} />
-            <div className="relative z-10">
-              <h3 className="font-serif text-2xl md:text-3xl font-bold text-center mb-10" style={{ color: C.cream }}>Why Choose YourAthens?</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {[
-                  { Icon: MapPin, title: "Perfect Location", desc: "In the heart of Exarcheia, walking distance to major attractions" },
-                  { Icon: Mail, title: "24/7 Support", desc: "We're always here to help with your stay" },
-                  { Icon: Phone, title: "Modern Comfort", desc: "Fully renovated apartments with all amenities" },
-                ].map(({ Icon, title, desc }) => (
-                  <div key={title} className="text-center">
-                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4" style={{ background: "rgba(251,246,238,0.12)" }}>
-                      <Icon className="w-7 h-7" style={{ color: C.gold }} />
-                    </div>
-                    <h4 className="font-semibold mb-2 text-sm" style={{ color: C.cream }}>{title}</h4>
-                    <p className="text-xs leading-relaxed" style={{ color: `${C.cream}99` }}>{desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+            {/* Right: form */}
+            <RevealSection delay={120}>
+              <h2 className="font-serif text-2xl font-bold mb-8">
+                Send us a Message
+              </h2>
+              <ContactForm />
+            </RevealSection>
           </div>
-        </RevealSection>
-      </div>
+        </div>
+      </section>
     </div>
   );
 }

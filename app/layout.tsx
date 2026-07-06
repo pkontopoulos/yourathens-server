@@ -2,6 +2,22 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navigation } from "@/components/Navigation";
 import { getVersionDisplay } from "@/shared/version";
+import { Playfair_Display, Lato } from "next/font/google";
+
+const playfair = Playfair_Display({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-playfair",
+  display: "swap",
+});
+
+const lato = Lato({
+  subsets: ["latin", "latin-ext"],
+  weight: ["300", "400", "700"],
+  variable: "--font-lato",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "YourAthens – Apartments in Exarcheia, Athens",
@@ -21,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${playfair.variable} ${lato.variable}`}>
       <head>
         {/* Google Tag Manager */}
         <script

@@ -1,6 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+
+const hidden = { opacity: 0, y: 24 };
+const visible = { opacity: 1, y: 0 };
 
 export function RevealSection({
   children,
@@ -11,36 +14,22 @@ export function RevealSection({
   delay?: number;
   className?: string;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [on, setOn] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([e]) => {
-        if (e.isIntersecting) {
-          setOn(true);
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.08 },
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
+  const shouldReduce = useReducedMotion();
 
   return (
-    <div
-      ref={ref}
+    <motion.div
       className={className}
-      style={{
-        opacity: on ? 1 : 0,
-        transform: on ? "none" : "translateY(24px)",
-        transition: `opacity 0.55s ease ${delay}ms, transform 0.55s ease ${delay}ms`,
+      variants={{ hidden, visible }}
+      initial={shouldReduce ? "visible" : "hidden"}
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.08 }}
+      transition={{
+        duration: shouldReduce ? 0 : 0.55,
+        delay: shouldReduce ? 0 : delay / 1000,
+        ease: [0.16, 1, 0.3, 1],
       }}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }

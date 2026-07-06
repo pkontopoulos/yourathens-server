@@ -10,7 +10,7 @@ const navigationItems = [
   { name: "Home", href: "/" },
   { name: "Jack Apartment", href: "/jack" },
   { name: "Alice Apartment", href: "/alice" },
-  { name: "Eat at Exarcheia", href: "/eat" },
+  { name: "Eat in Exarcheia", href: "/eat" },
   { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
 ];
@@ -22,12 +22,12 @@ export function Navigation() {
   return (
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-24">
+        <div className="flex items-center justify-between h-[72px]">
           <Link href="/" className="flex items-center space-x-2">
             <img
               src="/images/yourathens-logo.jpg"
               alt="YourAthens"
-              className="h-16 w-auto"
+              className="h-11 w-auto"
             />
           </Link>
 

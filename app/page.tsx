@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { HeroCarousel } from "@/components/HeroCarousel";
 import { RevealSection } from "@/components/RevealSection";
-import { MapPin, Users, Bed, ExternalLink, Star, ArrowRight } from "lucide-react";
+import { MapPin, ExternalLink, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "YourAthens – Apartments in Exarcheia, Athens",
+  title: "YourAthens - Apartments in Exarcheia, Athens",
   description:
     "Experience authentic Athens from two fully renovated apartments in Exarcheia. Book directly or via Booking.com and Airbnb.",
 };
@@ -51,162 +51,158 @@ export default function HomePage() {
     <div>
       <HeroCarousel />
 
-      {/* Welcome strip */}
-      <section className="py-16 bg-white">
+      {/* Intro */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <RevealSection className="text-center max-w-3xl mx-auto">
-            <h1 className="font-serif text-3xl md:text-4xl font-bold mb-5">
-              Stay where Athens actually lives
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-10">
-              Exarcheia is the city at its most unfiltered — street art, independent bookshops,
-              legendary tavernas, and a creative energy that no guidebook can capture.
-              Our two fully renovated apartments put you five floors above it all,
-              minutes from everything, immersed in the real Athens.
+          <RevealSection className="max-w-2xl">
+            <p
+              className="text-xs font-semibold uppercase tracking-widest mb-5"
+              style={{ color: C.terracotta }}
+            >
+              Exarcheia, Athens
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              {[
-                { icon: Star, label: "Renovated 2022" },
-                { icon: MapPin, label: "Exarcheia District" },
-                { icon: Bed, label: "5th Floor Views" },
-              ].map(({ icon: Icon, label }) => (
-                <div
-                  key={label}
-                  className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium"
-                  style={{
-                    background: `${C.terracotta}12`,
-                    color: C.terracotta,
-                    border: `1px solid ${C.terracotta}25`,
-                  }}
+            <h1 className="font-serif text-4xl md:text-5xl font-bold leading-tight mb-6">
+              Stay where Athens actually lives.
+            </h1>
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-[60ch]">
+              Exarcheia is the city at its most unfiltered: street art,
+              independent bookshops, legendary tavernas, and a creative energy
+              no guidebook can capture. Our two fully renovated apartments put
+              you five floors above it all.
+            </p>
+          </RevealSection>
+
+          <RevealSection
+            delay={160}
+            className="mt-14 pt-10 border-t border-stone-100 grid grid-cols-3 gap-6"
+          >
+            {[
+              { value: "2022", label: "Fully renovated" },
+              { value: "5th", label: "Floor with city views" },
+              { value: "2", label: "Apartments to choose from" },
+            ].map(({ value, label }, i) => (
+              <div
+                key={value}
+                className={`${i > 0 ? "pl-6 border-l border-stone-200" : ""}`}
+              >
+                <p
+                  className="font-serif text-3xl md:text-4xl font-bold mb-1"
+                  style={{ color: C.dark }}
                 >
-                  <Icon className="w-4 h-4" />
-                  {label}
-                </div>
-              ))}
-            </div>
+                  {value}
+                </p>
+                <p className="text-sm text-muted-foreground">{label}</p>
+              </div>
+            ))}
           </RevealSection>
         </div>
       </section>
 
       {/* Apartments */}
-      <section className="py-16" style={{ background: C.cream }}>
-        <div className="container mx-auto px-4">
-          <RevealSection className="text-center mb-12">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold">Our Apartments</h2>
-          </RevealSection>
+      <section className="border-t border-stone-100">
+        {apartments.map((apt, i) => (
+          <RevealSection key={apt.name}>
+            <div
+              className={`flex flex-col lg:flex-row ${i % 2 === 1 ? "lg:flex-row-reverse" : ""} border-b border-stone-100`}
+            >
+              {/* Image */}
+              <div className="w-full lg:w-[55%] h-72 sm:h-96 lg:min-h-[65vh] overflow-hidden">
+                <img
+                  src={apt.image}
+                  alt={apt.name}
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.03]"
+                />
+              </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            {apartments.map((apt, i) => (
-              <RevealSection key={apt.name} delay={i * 120}>
-                <div className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300 flex flex-col h-full">
-                  <div className="relative h-64 overflow-hidden">
-                    <img
-                      src={apt.image}
-                      alt={apt.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div
-                      className="absolute inset-0"
-                      style={{
-                        background:
-                          "linear-gradient(to top, rgba(27,13,5,0.45) 0%, transparent 60%)",
-                      }}
-                    />
-                    <div className="absolute bottom-3 left-3 flex gap-2">
-                      {[
-                        { Icon: Users, label: apt.guests },
-                        { Icon: Bed, label: apt.bedrooms },
-                        { Icon: MapPin, label: apt.floor },
-                      ].map(({ Icon, label }) => (
-                        <div
-                          key={label}
-                          className="flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold backdrop-blur-sm"
-                          style={{
-                            background: "rgba(251,246,238,0.18)",
-                            border: "1px solid rgba(251,246,238,0.3)",
-                            color: C.cream,
-                          }}
-                        >
-                          <Icon className="w-3 h-3" />
-                          {label}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+              {/* Content */}
+              <div
+                className="w-full lg:w-[45%] flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-12 lg:py-20"
+                style={{ background: i % 2 === 0 ? "white" : C.cream }}
+              >
+                <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">
+                  {apt.name}
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-8 max-w-md">
+                  {apt.description}
+                </p>
 
-                  <div className="p-6 flex flex-col flex-1">
-                    <h3 className="font-serif text-2xl font-bold mb-3">{apt.name}</h3>
-                    <p className="text-muted-foreground text-base leading-relaxed mb-6 flex-1">
-                      {apt.description}
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-3">
-                      <Link
-                        href={apt.href}
-                        className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-sm font-semibold text-white transition-opacity duration-200 hover:opacity-85"
-                        style={{
-                          background: `linear-gradient(130deg, ${C.terracotta} 0%, ${C.gold} 100%)`,
-                        }}
-                      >
-                        View Apartment
-                        <ArrowRight className="w-4 h-4" />
-                      </Link>
-                      <div className="flex gap-2">
-                        {[
-                          { label: "Booking.com", href: apt.bookingHref },
-                          { label: "Airbnb", href: apt.airbnbHref },
-                        ].map(({ label, href }) => (
-                          <a
-                            key={label}
-                            href={href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-1 px-3 py-2.5 rounded-lg text-xs font-semibold border transition-all duration-200 hover:text-white hover:bg-gradient-to-r hover:from-[#B85A35] hover:to-[#C9973E] hover:border-transparent"
-                            style={{ borderColor: `${C.terracotta}50`, color: C.terracotta }}
-                          >
-                            {label}
-                            <ExternalLink className="w-3 h-3" />
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div
-                    className="h-0.5 w-0 group-hover:w-full transition-all duration-500 ease-out"
-                    style={{
-                      background: `linear-gradient(90deg, ${C.terracotta}, ${C.gold})`,
-                    }}
-                  />
+                {/* Stats */}
+                <div className="flex items-center gap-4 flex-wrap mb-8 pb-8 border-b border-stone-200 text-sm font-medium">
+                  {[apt.guests, apt.bedrooms, apt.floor].map((label, idx) => (
+                    <span
+                      key={label}
+                      className={idx > 0 ? "pl-4 border-l border-stone-300" : ""}
+                    >
+                      {label}
+                    </span>
+                  ))}
                 </div>
-              </RevealSection>
-            ))}
-          </div>
-        </div>
+
+                {/* CTAs */}
+                <div className="flex flex-wrap gap-3">
+                  <Link
+                    href={apt.href}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold text-white transition-opacity duration-200 hover:opacity-85"
+                    style={{
+                      background: `linear-gradient(130deg, ${C.terracotta} 0%, ${C.gold} 100%)`,
+                    }}
+                  >
+                    View Apartment
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  {[
+                    { label: "Booking.com", href: apt.bookingHref },
+                    { label: "Airbnb", href: apt.airbnbHref },
+                  ].map(({ label, href }) => (
+                    <a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-4 py-3 rounded-lg text-xs font-semibold border transition-all duration-200 hover:text-white hover:bg-[#B85A35] hover:border-[#B85A35]"
+                      style={{
+                        borderColor: `${C.terracotta}50`,
+                        color: C.terracotta,
+                      }}
+                    >
+                      {label}
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </RevealSection>
+        ))}
       </section>
 
       {/* Location */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <RevealSection>
-              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-3">
-                Perfect Location in Athens
+              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">
+                Find Us in Exarcheia
               </h2>
-              <p className="text-sm font-semibold uppercase tracking-widest mb-6" style={{ color: C.terracotta }}>
-                31 Themistokleous Str, Exarcheia
-              </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                Located in the vibrant Exarcheia district, our apartments offer easy access to
-                Athens' most iconic attractions and authentic neighbourhoods.
+                Located at 31 Themistokleous Str, our apartments offer easy
+                access to Athens&apos; most iconic attractions and authentic
+                neighbourhoods.
               </p>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 {[
-                  "15 min walk from Archaeological Museum of Athens",
+                  "15 min walk from the National Archaeological Museum",
                   "20 min walk from Syntagma Square",
                   "10 min walk from Panepistimio metro station",
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: C.terracotta }} />
+                  <li
+                    key={item}
+                    className="flex items-start gap-3 text-sm text-muted-foreground"
+                  >
+                    <MapPin
+                      className="w-4 h-4 mt-0.5 shrink-0"
+                      style={{ color: C.terracotta }}
+                    />
                     {item}
                   </li>
                 ))}
@@ -227,10 +223,13 @@ export default function HomePage() {
                   className="absolute inset-0 w-full h-full"
                 />
                 <div
-                  className="absolute top-3 left-3 flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold shadow-md backdrop-blur-sm"
-                  style={{ background: "white", color: C.dark }}
+                  className="absolute top-3 left-3 flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold shadow-md bg-white"
+                  style={{ color: C.dark }}
                 >
-                  <MapPin className="w-3.5 h-3.5 shrink-0" style={{ color: C.terracotta }} />
+                  <MapPin
+                    className="w-3.5 h-3.5 shrink-0"
+                    style={{ color: C.terracotta }}
+                  />
                   YourAthens Apartments
                 </div>
               </div>
@@ -240,40 +239,42 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <RevealSection>
-            <div
-              className="rounded-2xl text-center py-16 px-6 relative overflow-hidden"
-              style={{
-                background: `linear-gradient(145deg, ${C.dark} 0%, #3A1A08 50%, ${C.terracotta} 100%)`,
-              }}
+      <section className="relative min-h-[65vh] flex items-center overflow-hidden">
+        <img
+          src="/images/athens-plaka.jpg"
+          alt="Athens cityscape"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(135deg, rgba(27,13,5,0.88) 0%, rgba(27,13,5,0.58) 55%, rgba(27,13,5,0.3) 100%)",
+          }}
+        />
+        <div className="relative z-10 container mx-auto px-4 py-24">
+          <RevealSection className="max-w-xl">
+            <h2
+              className="font-serif text-3xl md:text-4xl font-bold mb-5"
+              style={{ color: C.cream }}
             >
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)`,
-                  backgroundSize: "20px 20px",
-                }}
-              />
-              <div className="relative z-10">
-                <h2 className="font-serif text-3xl md:text-4xl font-bold mb-5" style={{ color: C.cream }}>
-                  Ready to Experience Athens?
-                </h2>
-                <p className="text-base md:text-lg max-w-2xl mx-auto mb-8 leading-relaxed" style={{ color: `${C.cream}BB` }}>
-                  Contact us today to book your stay in one of our beautiful apartments and discover
-                  the authentic heart of Athens.
-                </p>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-3 rounded-lg font-semibold text-sm transition-opacity duration-200 hover:opacity-85"
-                  style={{ background: C.cream, color: C.dark }}
-                >
-                  Contact Us
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
+              Ready to experience Athens?
+            </h2>
+            <p
+              className="text-base md:text-lg leading-relaxed mb-8 max-w-sm"
+              style={{ color: `${C.cream}BB` }}
+            >
+              Contact us to book your stay and discover the authentic heart of
+              Athens.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg font-semibold text-sm transition-opacity duration-200 hover:opacity-85"
+              style={{ background: C.cream, color: C.dark }}
+            >
+              Contact Us
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </RevealSection>
         </div>
       </section>

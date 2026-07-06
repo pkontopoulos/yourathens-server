@@ -78,31 +78,18 @@ export function ContactForm() {
 
   if (isSubmitted) {
     return (
-      <div
-        className="rounded-2xl text-center py-14 px-6 relative overflow-hidden"
-        style={{
-          background: `linear-gradient(145deg, ${C.dark} 0%, #3A1A08 50%, ${C.terracotta} 100%)`,
-        }}
-      >
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)`,
-            backgroundSize: "20px 20px",
-          }}
+      <div className="flex flex-col items-center justify-center py-16 px-6 text-center rounded-2xl border border-stone-100 bg-white">
+        <CheckCircle
+          className="w-12 h-12 mb-5"
+          style={{ color: C.terracotta }}
         />
-        <div className="relative z-10">
-          <CheckCircle className="w-14 h-14 mx-auto mb-5" style={{ color: C.gold }} />
-          <h3 className="font-serif text-xl font-bold mb-3" style={{ color: C.cream }}>
-            Message Sent!
-          </h3>
-          <p className="text-sm leading-relaxed mb-3" style={{ color: `${C.cream}BB` }}>
-            Thank you for contacting YourAthens! We&apos;ve received your message and will get back to you as soon as possible.
-          </p>
-          <p className="text-xs" style={{ color: `${C.cream}88` }}>
-            For urgent inquiries, call us at +30 6973800584
-          </p>
-        </div>
+        <h3 className="font-serif text-xl font-bold mb-3">Message sent.</h3>
+        <p className="text-sm text-muted-foreground leading-relaxed mb-2 max-w-xs">
+          Thank you for reaching out. We&apos;ll get back to you shortly.
+        </p>
+        <p className="text-xs text-muted-foreground">
+          For urgent inquiries: +30 6973800584
+        </p>
       </div>
     );
   }
