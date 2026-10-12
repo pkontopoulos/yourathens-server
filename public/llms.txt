@@ -1,0 +1,38 @@
+# YourAthens
+
+> YourAthens offers two fully renovated short-term rental apartments in Exarcheia, Athens, Greece. Both apartments are located on the 5th floor at 31 Themistokleous Str, fully renovated in 2022, and available to book directly or via Booking.com and Airbnb. The site also provides a curated local guide to Exarcheia restaurants and an Athens travel blog.
+
+## Apartments
+
+- [Jack Apartment](https://yourathens.gr/jack): Modern 1-bedroom apartment for up to 2 guests. Features a master bedroom with double bed, fully-equipped kitchen, espresso machine, 43" TV, air conditioning, and a shaded balcony with urban city views. 5th floor, Exarcheia, Athens. Rated 10/10 by guests.
+- [Alice Apartment](https://yourathens.gr/alice): Spacious 2-bedroom apartment for up to 4 guests. Features a master bedroom with queen-sized bed, second bedroom with double bed, 55" TV, espresso machine, fully-equipped kitchen, air conditioning in all rooms, and a large balcony with seating for 4. 5th floor, Exarcheia, Athens. Rated 10/10 by guests.
+
+## Location & Contact
+
+- [Home](https://yourathens.gr): Overview of both apartments, location map, and booking links.
+- [Contact](https://yourathens.gr/contact): Contact form, address (31 Themistokleous Str, Exarcheia, Athens 10677, Greece), phone (+30 6973800584), email (info@yourathens.gr).
+
+## Local Guide
+
+- [Eat in Exarcheia](https://yourathens.gr/eat): Curated list of the best restaurants, tavernas, and food spots in Exarcheia within walking distance of the apartments. Includes Giantes Restaurant, Rosalia Tavern, and more.
+
+## Athens Travel Blog
+
+- [Blog](https://yourathens.gr/blog): Travel stories, tips, and insider guides about Athens and Exarcheia.
+- [Discovering Ancient Athens](https://yourathens.gr/blog/discovering-ancient-athens): Guide to the Acropolis, Ancient Agora, and archaeological sites of Athens.
+- [A Foodie's Guide to Athens](https://yourathens.gr/blog/athens-food-guide): Traditional tavernas, street food, and modern Greek cuisine in Athens.
+- [Exploring Athens Neighborhoods](https://yourathens.gr/blog/exploring-athens-neighborhoods): Guide to Plaka, Psyrri, Exarcheia, and Kolonaki neighborhoods.
+- [Your Perfect Athens Weekend](https://yourathens.gr/blog/perfect-athens-itinerary): A 48-hour Athens itinerary balancing ancient sites and local experiences.
+- [Exarcheia: Athens' Alternative Heart](https://yourathens.gr/blog/exarcheia-athens-alternative-heart): Deep dive into Exarcheia's history, street art, bookshops, and café culture.
+- [Athens National Garden](https://yourathens.gr/blog/athens-national-garden-urban-oasis): Guide to the 38-acre National Garden near Syntagma Square.
+- [Cape Sounio Day Trip](https://yourathens.gr/blog/cape-sounio-temple-poseidon-athens-day-trip): The Temple of Poseidon at Cape Sounio – Athens' most dramatic day trip.
+- [Stavros Niarchos Cultural Center](https://yourathens.gr/blog/stavros-niarchos-cultural-center-athens-modern-marvel): Guide to Athens' modern cultural hub designed by Renzo Piano.
+
+## Key Facts
+
+- Address: 31 Themistokleous Str, Exarcheia, Athens 10677, Greece
+- Coordinates: 37.9849061, 23.7324895
+- Phone: +30 6973800584
+- Email: info@yourathens.gr
+- Walking distance: 15 min to National Archaeological Museum, 20 min to Syntagma Square, 10 min to Panepistimio metro station
+- Booking platforms: Booking.com and Airbnb
