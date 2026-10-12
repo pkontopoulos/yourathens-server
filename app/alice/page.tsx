@@ -18,9 +18,30 @@ import { Gallery } from "@/components/Gallery";
 import { RevealSection } from "@/components/RevealSection";
 
 export const metadata: Metadata = {
-  title: "Alice Apartment - YourAthens",
+  title: "Alice Apartment – 2-Bedrooms in Exarcheia, Athens",
   description:
-    "Spacious 2-bedroom apartment for up to 4 guests in Exarcheia, Athens. Fully renovated 2022, 5th floor with large balcony.",
+    "Spacious 2-bedroom apartment for up to 4 guests in Exarcheia, Athens. Fully renovated in 2022, 5th floor with a large balcony, 55-inch TV, espresso machine, and fully-equipped kitchen.",
+  openGraph: {
+    title: "Alice Apartment – 2-Bedrooms in Exarcheia, Athens",
+    description:
+      "Spacious 2-bedroom for up to 4 guests in Exarcheia, Athens. Fully renovated 2022, 5th floor with large balcony and city views.",
+    url: "https://yourathens.gr/alice",
+    images: [
+      {
+        url: "/images/alice-main.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Alice Apartment – YourAthens Exarcheia",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/alice-main.jpg"],
+  },
+  alternates: {
+    canonical: "https://yourathens.gr/alice",
+  },
 };
 
 const C = {
@@ -112,26 +133,56 @@ const testimonials = [
 ];
 
 const galleryImages = [
-  { src: "/images/alice/1.jpg", alt: "" },
-  { src: "/images/alice/4.jpg", alt: "" },
-  { src: "/images/alice/5.jpg", alt: "" },
-  { src: "/images/alice/2.jpg", alt: "" },
-  { src: "/images/alice/9.jpg", alt: "" },
-  { src: "/images/alice/6.jpg", alt: "" },
-  { src: "/images/alice/7.jpg", alt: "" },
-  { src: "/images/alice/8.jpg", alt: "" },
-  { src: "/images/alice/3.jpg", alt: "" },
-  { src: "/images/alice/10.jpg", alt: "" },
-  { src: "/images/alice/11.jpg", alt: "" },
-  { src: "/images/alice/12.jpg", alt: "" },
-  { src: "/images/alice/13.jpg", alt: "" },
-  { src: "/images/alice/14.jpg", alt: "" },
-  { src: "/images/alice/15.jpg", alt: "" },
+  { src: "/images/alice/1.jpg", alt: "Alice apartment – spacious bright living room" },
+  { src: "/images/alice/4.jpg", alt: "Alice apartment – master bedroom with queen-sized bed" },
+  { src: "/images/alice/5.jpg", alt: "Alice apartment – second bedroom with double bed" },
+  { src: "/images/alice/2.jpg", alt: "Alice apartment – fully equipped kitchen" },
+  { src: "/images/alice/9.jpg", alt: "Alice apartment – dining area for four" },
+  { src: "/images/alice/6.jpg", alt: "Alice apartment – large shaded balcony with seating for four" },
+  { src: "/images/alice/7.jpg", alt: "Alice apartment – 55-inch TV in living room" },
+  { src: "/images/alice/8.jpg", alt: "Alice apartment – bathroom" },
+  { src: "/images/alice/3.jpg", alt: "Alice apartment – master bedroom details" },
+  { src: "/images/alice/10.jpg", alt: "Alice apartment – open living and dining space" },
+  { src: "/images/alice/11.jpg", alt: "Alice apartment – kitchen appliances and espresso machine" },
+  { src: "/images/alice/12.jpg", alt: "Alice apartment – master bedroom with makeup desk" },
+  { src: "/images/alice/13.jpg", alt: "Alice apartment – second bedroom with working desk" },
+  { src: "/images/alice/14.jpg", alt: "Alice apartment – balcony city views" },
+  { src: "/images/alice/15.jpg", alt: "Alice apartment – renovated entrance and hallway" },
 ];
+
+const aliceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Apartment",
+  name: "Alice Apartment – YourAthens",
+  description:
+    "Spacious 2-bedroom apartment for up to 4 guests, fully renovated in 2022. Located on the 5th floor in Exarcheia, Athens with a large balcony, 55-inch TV, and city views.",
+  url: "https://yourathens.gr/alice",
+  numberOfRooms: 2,
+  occupancy: { "@type": "QuantitativeValue", maxValue: 4 },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "31 Themistokleous Str",
+    addressLocality: "Athens",
+    addressRegion: "Attica",
+    postalCode: "10677",
+    addressCountry: "GR",
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "10",
+    bestRating: "10",
+    ratingCount: 6,
+  },
+  image: "https://yourathens.gr/images/alice-main.jpg",
+};
 
 export default function AliceApartment() {
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aliceJsonLd) }}
+      />
       {/* Hero */}
       <section className="relative min-h-[72dvh] overflow-hidden">
         <img

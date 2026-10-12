@@ -4,9 +4,18 @@ import { RevealSection } from "@/components/RevealSection";
 import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us - YourAthens",
+  title: "Contact Us",
   description:
-    "Get in touch with YourAthens to book your stay or ask any questions about our apartments in Exarcheia, Athens.",
+    "Get in touch with YourAthens to book your stay or ask any questions about our apartments in Exarcheia, Athens. Call, email, or send us a message.",
+  openGraph: {
+    title: "Contact YourAthens",
+    description:
+      "Get in touch to book your stay or ask about our Exarcheia apartments.",
+    url: "https://yourathens.gr/contact",
+  },
+  alternates: {
+    canonical: "https://yourathens.gr/contact",
+  },
 };
 
 const C = {

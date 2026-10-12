@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Navigation } from "@/components/Navigation";
 import { getVersionDisplay } from "@/shared/version";
@@ -19,15 +19,52 @@ const lato = Lato({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  themeColor: "#B85A35",
+};
+
 export const metadata: Metadata = {
-  title: "YourAthens – Apartments in Exarcheia, Athens",
+  metadataBase: new URL("https://yourathens.gr"),
+  title: {
+    default: "YourAthens – Apartments in Exarcheia, Athens",
+    template: "%s – YourAthens",
+  },
   description:
     "Modern renovated apartments in the heart of Exarcheia, Athens. Book directly or via Booking.com and Airbnb.",
   openGraph: {
     title: "YourAthens – Apartments in Exarcheia, Athens",
     description:
-      "Modern renovated apartments in the heart of Exarcheia, Athens.",
+      "Modern renovated apartments in the heart of Exarcheia, Athens. Book directly or via Booking.com and Airbnb.",
     type: "website",
+    url: "https://yourathens.gr",
+    siteName: "YourAthens",
+    locale: "en_US",
+    images: [
+      {
+        url: "/images/jack-main.jpg",
+        width: 1200,
+        height: 630,
+        alt: "YourAthens – Modern Apartments in Exarcheia, Athens",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "YourAthens – Apartments in Exarcheia, Athens",
+    description:
+      "Modern renovated apartments in the heart of Exarcheia, Athens.",
+    images: ["/images/jack-main.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -43,6 +80,47 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MQM45XR7');`,
+          }}
+        />
+        {/* LodgingBusiness structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LodgingBusiness",
+              name: "YourAthens",
+              description:
+                "Modern renovated apartments in the heart of Exarcheia, Athens.",
+              url: "https://yourathens.gr",
+              telephone: "+306973800584",
+              email: "info@yourathens.gr",
+              image: "https://yourathens.gr/images/jack-main.jpg",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "31 Themistokleous Str",
+                addressLocality: "Athens",
+                addressRegion: "Attica",
+                postalCode: "10677",
+                addressCountry: "GR",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 37.9849061,
+                longitude: 23.7324895,
+              },
+              sameAs: [
+                "https://www.facebook.com/yourathens",
+                "https://www.instagram.com/your_athens_apartments",
+              ],
+              numberOfRooms: 2,
+              amenityFeature: [
+                { "@type": "LocationFeatureSpecification", name: "Air conditioning", value: true },
+                { "@type": "LocationFeatureSpecification", name: "Balcony", value: true },
+                { "@type": "LocationFeatureSpecification", name: "Fully equipped kitchen", value: true },
+                { "@type": "LocationFeatureSpecification", name: "Espresso machine", value: true },
+              ],
+            }),
           }}
         />
       </head>

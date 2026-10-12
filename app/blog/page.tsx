@@ -5,9 +5,18 @@ import { Clock, ArrowRight } from "lucide-react";
 import { RevealSection } from "@/components/RevealSection";
 
 export const metadata: Metadata = {
-  title: "Blog - YourAthens",
+  title: "Athens Travel Blog",
   description:
-    "Travel stories, tips, and insights about Athens and the Exarcheia neighbourhood from the YourAthens team.",
+    "Travel stories, tips, and insider guides about Athens and the Exarcheia neighbourhood. Discover the best restaurants, historical sites, and local experiences.",
+  openGraph: {
+    title: "Athens Travel Blog – YourAthens",
+    description:
+      "Travel stories, tips, and insider guides about Athens and the Exarcheia neighbourhood.",
+    url: "https://yourathens.gr/blog",
+  },
+  alternates: {
+    canonical: "https://yourathens.gr/blog",
+  },
 };
 
 const C = {

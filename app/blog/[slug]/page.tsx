@@ -25,13 +25,25 @@ export async function generateMetadata({
   const post = getBlogPost(slug);
   if (!post) return {};
   return {
-    title: `${post.title} - YourAthens Blog`,
+    title: post.title,
     description: post.excerpt,
     openGraph: {
       title: post.title,
       description: post.excerpt,
       images: [{ url: post.coverImage, alt: post.coverImageAlt }],
       type: "article",
+      publishedTime: post.publishedAt,
+      authors: ["YourAthens"],
+      url: `https://yourathens.gr/blog/${post.slug}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [post.coverImage],
+    },
+    alternates: {
+      canonical: `https://yourathens.gr/blog/${post.slug}`,
     },
   };
 }
@@ -46,8 +58,36 @@ export default async function BlogPost({
 
   if (!post) notFound();
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    image: `https://yourathens.gr${post.coverImage}`,
+    datePublished: post.publishedAt,
+    author: {
+      "@type": "Organization",
+      name: "YourAthens",
+      url: "https://yourathens.gr",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "YourAthens",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://yourathens.gr/images/yourathens-logo.jpg",
+      },
+    },
+    url: `https://yourathens.gr/blog/${post.slug}`,
+    keywords: post.tags.join(", "),
+  };
+
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       {/* Hero image */}
       <div className="relative min-h-[58dvh] overflow-hidden">
         <img

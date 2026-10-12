@@ -4,6 +4,10 @@ import { FileText, Mail, Phone } from "lucide-react";
 export const metadata: Metadata = {
   title: "Passport Submission – YourAthens",
   description: "Submit your passport information for booking verification.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function PassportUpload() {

@@ -16,9 +16,30 @@ import { Gallery } from "@/components/Gallery";
 import { RevealSection } from "@/components/RevealSection";
 
 export const metadata: Metadata = {
-  title: "Jack Apartment - YourAthens",
+  title: "Jack Apartment – 1-Bedroom in Exarcheia, Athens",
   description:
-    "Modern 1-bedroom apartment for 2 guests in Exarcheia, Athens. Fully renovated 2022, 5th floor with balcony and city views.",
+    "Modern 1-bedroom apartment for 2 guests in Exarcheia, Athens. Fully renovated in 2022, 5th floor with balcony and city views, espresso machine, and fully-equipped kitchen.",
+  openGraph: {
+    title: "Jack Apartment – 1-Bedroom in Exarcheia, Athens",
+    description:
+      "Modern 1-bedroom for 2 guests in Exarcheia, Athens. Fully renovated 2022, 5th floor with balcony and city views.",
+    url: "https://yourathens.gr/jack",
+    images: [
+      {
+        url: "/images/jack-main.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Jack Apartment – YourAthens Exarcheia",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/jack-main.jpg"],
+  },
+  alternates: {
+    canonical: "https://yourathens.gr/jack",
+  },
 };
 
 const C = {
@@ -107,24 +128,54 @@ const testimonials = [
 ];
 
 const galleryImages = [
-  { src: "/images/jack/1.jpg", alt: "" },
-  { src: "/images/jack/2.jpg", alt: "" },
-  { src: "/images/jack/3.jpg", alt: "" },
-  { src: "/images/jack/4.jpg", alt: "" },
-  { src: "/images/jack/5.jpg", alt: "" },
-  { src: "/images/jack/6.jpg", alt: "" },
-  { src: "/images/jack/7.jpg", alt: "" },
-  { src: "/images/jack/8.jpg", alt: "" },
-  { src: "/images/jack/9.jpg", alt: "" },
-  { src: "/images/jack/10.jpg", alt: "" },
-  { src: "/images/jack/11.jpg", alt: "" },
-  { src: "/images/jack/12.jpg", alt: "" },
-  { src: "/images/jack/13.jpg", alt: "" },
+  { src: "/images/jack/1.jpg", alt: "Jack apartment – bright living room with modern décor" },
+  { src: "/images/jack/2.jpg", alt: "Jack apartment – master bedroom with double bed" },
+  { src: "/images/jack/3.jpg", alt: "Jack apartment – fully equipped kitchen" },
+  { src: "/images/jack/4.jpg", alt: "Jack apartment – dining area for two" },
+  { src: "/images/jack/5.jpg", alt: "Jack apartment – bathroom" },
+  { src: "/images/jack/6.jpg", alt: "Jack apartment – shaded balcony with city views" },
+  { src: "/images/jack/7.jpg", alt: "Jack apartment – living area with 43-inch TV" },
+  { src: "/images/jack/8.jpg", alt: "Jack apartment – bedroom with air conditioning" },
+  { src: "/images/jack/9.jpg", alt: "Jack apartment – kitchen with espresso machine" },
+  { src: "/images/jack/10.jpg", alt: "Jack apartment – balcony seating area" },
+  { src: "/images/jack/11.jpg", alt: "Jack apartment – entrance hallway" },
+  { src: "/images/jack/12.jpg", alt: "Jack apartment – bathroom amenities" },
+  { src: "/images/jack/13.jpg", alt: "Jack apartment – overview of the renovated interior" },
 ];
+
+const jackJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Apartment",
+  name: "Jack Apartment – YourAthens",
+  description:
+    "Modern 1-bedroom apartment for 2 guests, fully renovated in 2022. Located on the 5th floor in Exarcheia, Athens with a shaded balcony and city views.",
+  url: "https://yourathens.gr/jack",
+  numberOfRooms: 1,
+  occupancy: { "@type": "QuantitativeValue", maxValue: 2 },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "31 Themistokleous Str",
+    addressLocality: "Athens",
+    addressRegion: "Attica",
+    postalCode: "10677",
+    addressCountry: "GR",
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "10",
+    bestRating: "10",
+    ratingCount: 6,
+  },
+  image: "https://yourathens.gr/images/jack-main.jpg",
+};
 
 export default function JackApartment() {
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jackJsonLd) }}
+      />
       {/* Hero */}
       <section className="relative min-h-[72dvh] overflow-hidden">
         <img

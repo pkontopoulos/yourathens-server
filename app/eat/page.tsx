@@ -4,9 +4,18 @@ import { ExternalLink, MapPin, ArrowRight } from "lucide-react";
 import { RevealSection } from "@/components/RevealSection";
 
 export const metadata: Metadata = {
-  title: "Eat in Exarcheia – YourAthens",
+  title: "Best Restaurants in Exarcheia, Athens",
   description:
     "Discover the best restaurants, tavernas, and food spots in Exarcheia, Athens. Curated picks within walking distance of our apartments.",
+  openGraph: {
+    title: "Best Restaurants in Exarcheia, Athens – YourAthens",
+    description:
+      "Curated restaurant picks in Exarcheia, Athens – all within walking distance of our apartments.",
+    url: "https://yourathens.gr/eat",
+  },
+  alternates: {
+    canonical: "https://yourathens.gr/eat",
+  },
 };
 
 const C = {

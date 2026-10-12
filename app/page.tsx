@@ -5,9 +5,34 @@ import { RevealSection } from "@/components/RevealSection";
 import { MapPin, ExternalLink, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "YourAthens - Apartments in Exarcheia, Athens",
+  title: {
+    absolute: "YourAthens – Apartments in Exarcheia, Athens",
+  },
   description:
-    "Experience authentic Athens from two fully renovated apartments in Exarcheia. Book directly or via Booking.com and Airbnb.",
+    "Two fully renovated apartments in Exarcheia, Athens. Stay where Athens actually lives – 5th floor city views, fully equipped, book direct or via Booking.com and Airbnb.",
+  openGraph: {
+    title: "YourAthens – Apartments in Exarcheia, Athens",
+    description:
+      "Two fully renovated apartments in Exarcheia, Athens. Stay where Athens actually lives.",
+    url: "https://yourathens.gr",
+    images: [
+      {
+        url: "/images/jack-main.jpg",
+        width: 1200,
+        height: 630,
+        alt: "YourAthens – Modern Apartments in Exarcheia, Athens",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "YourAthens – Apartments in Exarcheia, Athens",
+    description: "Two fully renovated apartments in Exarcheia, Athens.",
+    images: ["/images/jack-main.jpg"],
+  },
+  alternates: {
+    canonical: "https://yourathens.gr",
+  },
 };
 
 const C = {
