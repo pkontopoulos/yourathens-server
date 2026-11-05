@@ -203,7 +203,7 @@ export default function JackGuidePage() {
         style={{ WebkitOverflowScrolling: "touch" }}
       >
         <div
-          className="flex gap-2 px-4 py-3 overflow-x-auto"
+          className="flex gap-2 px-4 py-3 overflow-x-auto justify-center"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {SECTIONS.map(({ id, label, icon: Icon }) => (
