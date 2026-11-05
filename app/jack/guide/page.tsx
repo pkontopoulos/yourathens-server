@@ -332,7 +332,7 @@ export default function JackGuidePage() {
           <div className="space-y-3">
             <div className="space-y-3 mb-3">
               <img
-                src="/images/outdoor-s.png"
+                src="/images/outdoor.png"
                 alt="Building entrance at 31 Themistokleous"
                 className="rounded-2xl w-full"
               />
