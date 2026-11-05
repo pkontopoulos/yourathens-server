@@ -356,8 +356,7 @@ export default function AliceGuidePage() {
                   <strong>wall on the right</strong>.
                 </Step>
                 <Step number={2}>
-                  Find the <strong>top right lockbox</strong> — it's labeled{" "}
-                  <strong>"ALICE"</strong>.
+                  Find the <strong>top right lockbox</strong>.
                 </Step>
                 <Step number={3}>
                   Enter your <strong>4-digit code</strong>. This is sent to you

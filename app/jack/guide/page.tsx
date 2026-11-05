@@ -358,8 +358,7 @@ export default function JackGuidePage() {
                   <strong>wall on the right</strong>.
                 </Step>
                 <Step number={2}>
-                  Find the <strong>bottom right lockbox</strong> — it's labeled{" "}
-                  <strong>"JACK"</strong>.
+                  Find the <strong>bottom right lockbox</strong>.
                 </Step>
                 <Step number={3}>
                   Enter your <strong>4-digit code</strong>. This is sent to you
