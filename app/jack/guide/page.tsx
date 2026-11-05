@@ -178,7 +178,7 @@ export default function JackGuidePage() {
               "linear-gradient(to bottom, rgba(27,13,5,0.15) 0%, rgba(27,13,5,0.72) 100%)",
           }}
         />
-        <div className="absolute bottom-0 left-0 right-0 p-6 max-w-lg mx-auto">
+        <div className="absolute bottom-0 left-0 right-0 p-6 pb-10 max-w-lg mx-auto">
           <p
             className="text-xs font-semibold uppercase tracking-widest mb-2"
             style={{ color: `${C.cream}99` }}
