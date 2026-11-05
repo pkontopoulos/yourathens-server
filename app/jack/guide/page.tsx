@@ -18,6 +18,7 @@ import {
   Phone,
   Layers,
   UtensilsCrossed,
+  Coffee,
 } from "lucide-react";
 
 const C = {
@@ -37,6 +38,7 @@ const SECTIONS = [
   { id: "blinds", label: "Blinds", icon: Layers },
   { id: "tv", label: "Smart TV", icon: Tv },
   { id: "oven", label: "Oven & Hobs", icon: UtensilsCrossed },
+  { id: "coffee", label: "Coffee & Tea", icon: Coffee },
   { id: "balcony", label: "Balcony", icon: Sun },
 ];
 
@@ -635,6 +637,28 @@ export default function JackGuidePage() {
                 >
                   Don't forget to turn everything off after use.
                 </div>
+              </div>
+            </InfoCard>
+          </div>
+        </section>
+
+        {/* ── Coffee & Tea ── */}
+        <section>
+          <SectionAnchor icon={Coffee} title="Coffee & Tea" id="coffee" />
+          <div className="space-y-3">
+            <img
+              src="/images/jack-coffee.png"
+              alt="Espresso machine and tea maker"
+              className="rounded-2xl w-full"
+            />
+            <InfoCard>
+              <div className="space-y-3 text-sm text-stone-700 leading-relaxed">
+                <p>
+                  In the kitchen you'll find an <strong className="text-stone-900">Espresso Machine</strong> and <strong className="text-stone-900">Tea Maker</strong>, stocked with espresso capsules, tea bags, sugar, and honey.
+                </p>
+                <p>
+                  You'll also find a <strong className="text-stone-900">Toaster</strong>, a <strong className="text-stone-900">Water Boiler</strong>, and various cooking and food serving accessories.
+                </p>
               </div>
             </InfoCard>
           </div>
