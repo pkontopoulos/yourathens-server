@@ -17,6 +17,7 @@ import {
   Navigation2,
   Phone,
   Layers,
+  UtensilsCrossed,
 } from "lucide-react";
 
 const C = {
@@ -35,6 +36,7 @@ const SECTIONS = [
   { id: "wifi", label: "Wi-Fi", icon: Wifi },
   { id: "blinds", label: "Blinds", icon: Layers },
   { id: "tv", label: "Smart TV", icon: Tv },
+  { id: "oven", label: "Oven & Hobs", icon: UtensilsCrossed },
   { id: "balcony", label: "Balcony", icon: Sun },
 ];
 
@@ -605,6 +607,37 @@ export default function JackGuidePage() {
               ))}
             </ul>
           </InfoCard>
+        </section>
+
+        {/* ── Oven & Hobs ── */}
+        <section>
+          <SectionAnchor icon={UtensilsCrossed} title="Oven & Hobs" id="oven" />
+          <div className="space-y-3">
+            <img
+              src="/images/jack-oven.png"
+              alt="Oven and hobs"
+              className="rounded-2xl w-full"
+            />
+            <InfoCard>
+              <div className="space-y-3 text-sm text-stone-700 leading-relaxed">
+                <p>
+                  <strong className="text-stone-900">Oven:</strong> Use the
+                  knobs to adjust temperature, timer, and heating options.
+                </p>
+                <p>
+                  <strong className="text-stone-900">Hobs:</strong> Turn on the
+                  hob and tap the zone you want to use, then increase or
+                  decrease the temperature accordingly.
+                </p>
+                <div
+                  className="rounded-xl p-3 text-xs text-stone-700 leading-relaxed"
+                  style={{ background: `${C.terracotta}12` }}
+                >
+                  Don't forget to turn everything off after use.
+                </div>
+              </div>
+            </InfoCard>
+          </div>
         </section>
 
         {/* ── Balcony ── */}
