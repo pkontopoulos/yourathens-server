@@ -186,7 +186,7 @@ export default function JackGuidePage() {
             YourAthens · Guest Guide
           </p>
           <h1
-            className="font-serif text-4xl font-bold leading-tight"
+            className="font-serif text-4xl font-bold leading-tight mb-4"
             style={{ color: C.cream }}
           >
             Welcome to Jack
