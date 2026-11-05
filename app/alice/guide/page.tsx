@@ -16,6 +16,7 @@ import {
   Navigation2,
   Phone,
   Layers,
+  Sun,
 } from "lucide-react";
 
 const C = {
@@ -34,6 +35,7 @@ const SECTIONS = [
   { id: "wifi", label: "Wi-Fi", icon: Wifi },
   { id: "blinds", label: "Blinds", icon: Layers },
   { id: "tv", label: "Smart TV", icon: Tv },
+  { id: "balcony", label: "Balcony", icon: Sun },
 ];
 
 function CopyButton({ text }: { text: string }) {
@@ -601,6 +603,28 @@ export default function AliceGuidePage() {
               ))}
             </ul>
           </InfoCard>
+        </section>
+
+        {/* ── Balcony ── */}
+        <section>
+          <SectionAnchor icon={Sun} title="Balcony" id="balcony" />
+          <div className="space-y-3">
+            <div className="rounded-2xl overflow-hidden h-52">
+              <img
+                src="/images/alice/10.jpg"
+                alt="Alice apartment balcony"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <InfoCard>
+              <p className="text-sm text-stone-700 leading-relaxed">
+                Step outside to your private balcony with seating for{" "}
+                <strong className="text-stone-900">four</strong> — surrounded by
+                the authentic urban energy of Exarcheia. Perfect for a morning
+                coffee, a relaxed lunch, or an evening drink in the open air.
+              </p>
+            </InfoCard>
+          </div>
         </section>
 
         {/* Contact CTA */}
