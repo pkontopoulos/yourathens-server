@@ -163,8 +163,8 @@ export default function JackGuidePage() {
       {/* Hero */}
       <section className="relative h-[55dvh] overflow-hidden">
         <img
-          src="/images/jack/1.jpg"
-          alt="Jack Apartment living room"
+          src="/images/jack-main.jpg"
+          alt="Jack Apartment"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div
