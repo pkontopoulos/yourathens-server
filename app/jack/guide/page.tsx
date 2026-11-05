@@ -330,6 +330,14 @@ export default function JackGuidePage() {
         <section>
           <SectionAnchor icon={Key} title="Building Access" id="building" />
           <div className="space-y-3">
+            <div className="rounded-2xl overflow-hidden mb-3">
+              <img
+                src="/images/Jack-Lockbox-s.png"
+                alt="Jack lockbox location"
+                className="w-full object-cover"
+              />
+            </div>
+
             <InfoCard>
               <p
                 className="text-sm font-semibold mb-3"
