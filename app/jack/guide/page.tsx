@@ -438,7 +438,7 @@ export default function JackGuidePage() {
               </Step>
               <Step number={2}>
                 Open it and press the button in position{" "}
-                <strong>#34</strong> once. The light turns{" "}
+                <strong>#19</strong> once. The light turns{" "}
                 <strong>orange</strong> — the water is heating.
               </Step>
               <Step number={3}>
