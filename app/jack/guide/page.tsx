@@ -337,7 +337,7 @@ export default function JackGuidePage() {
                 className="rounded-2xl w-full"
               />
               <img
-                src="/images/Jack-Lockbox-s.png"
+                src="/images/jack-lock.png"
                 alt="Jack lockbox location"
                 className="rounded-2xl w-full"
               />
