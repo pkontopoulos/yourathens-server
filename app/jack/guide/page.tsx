@@ -330,21 +330,17 @@ export default function JackGuidePage() {
         <section>
           <SectionAnchor icon={Key} title="Building Access" id="building" />
           <div className="space-y-3">
-            <div className="grid grid-cols-2 gap-3 mb-3">
-              <div className="rounded-2xl overflow-hidden h-44">
-                <img
-                  src="/images/outdoor-s.png"
-                  alt="Building entrance at 31 Themistokleous"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="rounded-2xl overflow-hidden h-44">
-                <img
-                  src="/images/Jack-Lockbox-s.png"
-                  alt="Jack lockbox location"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+            <div className="flex gap-3 justify-center mb-3">
+              <img
+                src="/images/outdoor-s.png"
+                alt="Building entrance at 31 Themistokleous"
+                className="rounded-2xl h-44 w-auto"
+              />
+              <img
+                src="/images/Jack-Lockbox-s.png"
+                alt="Jack lockbox location"
+                className="rounded-2xl h-44 w-auto"
+              />
             </div>
 
             <InfoCard>
