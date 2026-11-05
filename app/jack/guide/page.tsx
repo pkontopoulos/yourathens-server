@@ -613,7 +613,7 @@ export default function JackGuidePage() {
           <div className="space-y-3">
             <div className="rounded-2xl overflow-hidden h-52">
               <img
-                src="/images/jack/6.jpg"
+                src="/images/jack/1.jpg"
                 alt="Jack apartment balcony"
                 className="w-full h-full object-cover"
               />
