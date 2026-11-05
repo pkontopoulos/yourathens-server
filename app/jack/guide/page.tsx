@@ -418,35 +418,43 @@ export default function JackGuidePage() {
         <section>
           <SectionAnchor icon={Droplets} title="Hot Water" id="hot-water" />
           <InfoCard>
+            <p
+              className="text-sm font-semibold mb-2"
+              style={{ color: C.dark }}
+            >
+              Please read before showering
+            </p>
             <p className="text-sm text-stone-700 leading-relaxed mb-4">
-              The water heater needs to be switched on manually — it only takes
-              a moment:
+              Like many homes across Europe, Asia, and the Middle East, this
+              apartment does not keep water hot all day. The heater works on
+              demand — switch it on <strong>20–25 minutes</strong> before your
+              shower or bath.
             </p>
             <div className="space-y-3 mb-4">
               <Step number={1}>
-                As you enter the apartment, find the{" "}
-                <strong>small closet on your left</strong> — it contains the
-                electricity panel.
+                As you enter the apartment, find the small closet on the wall
+                next to the <strong>main bedroom door</strong> — it contains the
+                electricity switches.
               </Step>
               <Step number={2}>
-                Locate switch <strong>#19</strong> and push it once.
+                Open it and press the button in position{" "}
+                <strong>#34</strong> once. The light turns{" "}
+                <strong>orange</strong> — the water is heating.
               </Step>
               <Step number={3}>
-                The light turns <strong>orange</strong> — the heater is now
-                running.
-              </Step>
-              <Step number={4}>
-                After ~<strong>25 minutes</strong> it switches off automatically
-                and the light turns green. Hot water is ready!
+                Wait <strong>20–25 minutes</strong>. When the water is hot, the
+                heater switches off by itself and the light turns{" "}
+                <strong>green</strong>. You don't need to do anything.
               </Step>
             </div>
             <div
-              className="rounded-xl p-3 text-xs text-stone-600 leading-relaxed"
+              className="rounded-xl p-3 text-xs text-stone-700 leading-relaxed"
               style={{ background: `${C.gold}20` }}
             >
-              <strong>No action needed</strong> once it's running — the switch
-              turns off automatically when the water reaches the right
-              temperature.
+              <strong>Important:</strong> once the hot water is used up, you'll
+              need to press the button again and wait before the next shower. We
+              recommend pressing it as soon as you wake up or return to the
+              apartment, so the water is ready when you are.
             </div>
           </InfoCard>
         </section>
