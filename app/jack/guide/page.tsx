@@ -394,6 +394,13 @@ export default function JackGuidePage() {
         {/* ── Apartment ── */}
         <section>
           <SectionAnchor icon={Home} title="The Apartment" id="apartment" />
+          <div className="rounded-2xl overflow-hidden mb-3">
+            <img
+              src="/images/Jack-Door.jpeg"
+              alt="Jack apartment door on the 5th floor"
+              className="w-full object-cover"
+            />
+          </div>
           <InfoCard>
             <div className="divide-y divide-stone-200">
               <div className="flex items-center gap-4 py-3">
