@@ -330,16 +330,16 @@ export default function JackGuidePage() {
         <section>
           <SectionAnchor icon={Key} title="Building Access" id="building" />
           <div className="space-y-3">
-            <div className="flex gap-3 justify-center mb-3">
+            <div className="space-y-3 mb-3">
               <img
                 src="/images/outdoor-s.png"
                 alt="Building entrance at 31 Themistokleous"
-                className="rounded-2xl h-44 w-auto"
+                className="rounded-2xl w-full"
               />
               <img
                 src="/images/Jack-Lockbox-s.png"
                 alt="Jack lockbox location"
-                className="rounded-2xl h-44 w-auto"
+                className="rounded-2xl w-full"
               />
             </div>
 
