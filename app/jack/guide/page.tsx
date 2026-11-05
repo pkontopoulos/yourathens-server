@@ -19,6 +19,7 @@ import {
   Layers,
   UtensilsCrossed,
   Coffee,
+  Clock,
 } from "lucide-react";
 
 const C = {
@@ -29,6 +30,7 @@ const C = {
 };
 
 const SECTIONS = [
+  { id: "checkinout", label: "Check-In/Out", icon: Clock },
   { id: "location", label: "Location", icon: MapPin },
   { id: "parking", label: "Parking", icon: Car },
   { id: "building", label: "Building", icon: Key },
@@ -222,6 +224,31 @@ export default function JackGuidePage() {
 
       {/* Guide Content */}
       <div className="max-w-lg mx-auto px-4 py-8 space-y-12">
+
+        {/* ── Check-In / Check-Out ── */}
+        <section>
+          <SectionAnchor icon={Clock} title="Check-In & Check-Out" id="checkinout" />
+          <InfoCard>
+            <div className="divide-y divide-stone-200">
+              <div className="flex items-center justify-between py-3">
+                <p className="text-sm font-medium" style={{ color: C.dark }}>
+                  Check-In
+                </p>
+                <p className="text-sm font-bold" style={{ color: C.terracotta }}>
+                  15:00
+                </p>
+              </div>
+              <div className="flex items-center justify-between py-3">
+                <p className="text-sm font-medium" style={{ color: C.dark }}>
+                  Check-Out
+                </p>
+                <p className="text-sm font-bold" style={{ color: C.terracotta }}>
+                  11:00
+                </p>
+              </div>
+            </div>
+          </InfoCard>
+        </section>
 
         {/* ── Location ── */}
         <section>
