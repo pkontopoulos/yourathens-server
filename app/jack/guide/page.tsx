@@ -332,6 +332,13 @@ export default function JackGuidePage() {
           <div className="space-y-3">
             <div className="rounded-2xl overflow-hidden mb-3">
               <img
+                src="/images/outdoor-s.png"
+                alt="Building entrance at 31 Themistokleous"
+                className="w-full object-cover"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden mb-3">
+              <img
                 src="/images/Jack-Lockbox-s.png"
                 alt="Jack lockbox location"
                 className="w-full object-cover"
