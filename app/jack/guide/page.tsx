@@ -412,8 +412,7 @@ export default function JackGuidePage() {
                   </p>
                   <p className="text-sm text-stone-700 leading-relaxed">
                     Next to the main door you'll find the intercom panel. Jack's
-                    bell is the <strong>upper one</strong>, labeled{" "}
-                    <strong>5B</strong>.
+                    bell is the one labeled <strong>5B</strong>.
                   </p>
                   <p className="text-xs text-stone-500 mt-1.5">
                     For food delivery or guest entry.
