@@ -433,6 +433,11 @@ export default function AliceGuidePage() {
         {/* ── Hot Water ── */}
         <section>
           <SectionAnchor icon={Droplets} title="Hot Water" id="hot-water" />
+          <img
+            src="/images/alice-hotw.png"
+            alt="Hot water switch panel"
+            className="rounded-2xl w-full mb-3"
+          />
           <InfoCard>
             <p
               className="text-sm font-semibold mb-2"
