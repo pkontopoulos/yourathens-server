@@ -360,7 +360,7 @@ export default function AliceGuidePage() {
                 </Step>
                 <Step number={3}>
                   Enter your <strong>4-digit code</strong>. This is sent to you
-                  the day before arrival via your booking platform.
+                  on arrival date via your booking platform.
                 </Step>
                 <Step number={4}>Collect your keys and you're in!</Step>
               </div>
