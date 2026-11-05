@@ -189,9 +189,7 @@ export default function JackGuidePage() {
             className="font-serif text-4xl font-bold leading-tight"
             style={{ color: C.cream }}
           >
-            Welcome to
-            <br />
-            Jack
+            Welcome to Jack
           </h1>
           <p className="text-sm mt-2" style={{ color: `${C.cream}BB` }}>
             31 Themistokleous Str., Exarcheia, Athens
